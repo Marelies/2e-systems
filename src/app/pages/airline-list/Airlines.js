@@ -42,7 +42,7 @@ export const  Airlines = () => {
                     <div className="cards">
                  
                         <div className="kartica mx-auto">
-                            <a href="/fourth" className='linkKartica'>
+                          
                             
                                 <div class="card text-bg-primary mb-3 mt-3">
                                 
@@ -63,7 +63,7 @@ export const  Airlines = () => {
                            
                                 </div>
                                     
-                            </a>
+                       
                             
                         </div> 
                                         

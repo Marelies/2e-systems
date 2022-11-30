@@ -38,18 +38,5 @@
     text-decoration: none;
 }
 
-.success {
-    height: 65vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    background-image: url("../../../lib/images/Checkmark.gif");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 150vh;
-}
-
 
 

@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './template-components/Footer.js';
 import "../App.css";
 import Header from './template-components/Header.js';
-import Desk from '../../lib/images/Desk.png'
+
 
 
 export const Home = () => {
