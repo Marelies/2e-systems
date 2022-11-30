@@ -1,0 +1,80 @@
+.prviKatNaslov{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-weight: 600;
+}
+
+.kartica2{
+    width: 30rem;
+    text-align: left;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-inline: auto;
+}
+
+.kontenjer{
+    max-width: 1348px;
+    max-width: 640px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    box-sizing: border-box;
+    justify-content: center;
+    margin:auto;
+    gap: 50px;
+    place-items: center;   
+}
+
+.drugiKatNaslov{
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(34, 34, 34);
+    font-weight: 600;
+}
+
+.ikonaCelija{
+   
+    padding: 100px;
+}
+
+.ikona{
+    width: 100px;
+}
+
+.tlocrt{
+    display: block;
+    max-height: 430px;
+    max-width: 100%;
+}
+
+.tlocrtContainer{
+    display: flex;
+    justify-content: center;
+}
+.btn-default
+{
+  background-color: #419873;
+  color: white;
+}
+.btn-default:hover{
+    background-color: #317256;
+    color: white;
+}
+.btn-default:active{
+    background-color: #52bf90;
+    color: white;
+}
+.btn-default:focus{
+    background-color: #52bf90;
+    color: white;
+}
+
+
+/* This pen */
+#header {
+    background: url(https://images.unsplash.com/photo-1415795854641-f4a487a0fdc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80) center center / cover no-repeat ;
+  }

@@ -1,0 +1,72 @@
+.app {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 900px;
+    margin: auto;
+    margin-top:10%;
+  
+  }
+
+  .app2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 900px;
+    margin-top:10%;
+    
+  }
+
+  .naslovAdmin {
+    color: white;
+  }
+  
+  
+  .search {
+    padding: 10px;
+    font-size: 20px;
+    width: 100%;
+    margin-right: 20px; 
+  
+  }
+  
+  .list {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+  
+  .listItem {
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: #444;
+    font-weight: 300;
+  }
+  
+  table {
+    width: 100%;
+    margin: 50px 0px;
+    border-spacing: 15px;
+    color: #444;
+  }
+  
+  tr {
+    margin-bottom: 20px;
+  }
+  
+  th {
+    width: 250px;
+    text-align: left;
+    font-size: 20px;
+    color: white;
+  }
+  
+  td {
+    width: 250px;
+    font-size: 20px;
+    color: white;
+  }
+
+ 
+
