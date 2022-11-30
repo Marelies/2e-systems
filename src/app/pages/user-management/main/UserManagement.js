@@ -59,6 +59,7 @@ export const UserManagement = () => {
                                     <div class="card-footer">
                                    
                     <h1 class="velikiTekst"> {airport.CountryName}</h1>
+                    <h1 class="velikiTekst"> {airport.CountryISO}</h1>
                                   
                                     </div>
                            
