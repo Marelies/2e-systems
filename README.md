@@ -7,6 +7,8 @@ npm install --save moment react-moment
 
 npm install react-select react-select-async-paginate
 
+npm install boostrap for  insurance.
+
 When you finished with installations,  use npm install then npm start commands for Windows.
 
 
