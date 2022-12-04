@@ -1,7 +1,8 @@
 # 
 You will need to install firebase, moment and  pagination before you start the app.
 
-npm install --save firebase
+
+npm install firebase@8.2.3
 
 npm install --save moment react-moment
 
