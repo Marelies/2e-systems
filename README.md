@@ -12,4 +12,8 @@ npm install boostrap for  insurance.
 
 When you finished with installations,  use npm install then npm start commands for Windows.
 
+Sign up in app.
+
+Enjoy.
+
 
