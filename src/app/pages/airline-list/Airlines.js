@@ -1,29 +1,21 @@
-import {useEffect, useState} from 'react';
+import {useContext} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../template-components/Footer';
 import "../../App.css";
 import Header from '../template-components/Header';
 import "../user-management/UserManagement.css";
-import {db, auth} from '../../context/FireBaseProvider';
-import {getDocs,  collection } from "firebase/firestore"
-
+import {db, auth} from '../../context/Config';
+import firebase from "firebase";
+import {AirlineContext}  from '../../context/AirlineContext';
 
 
   
 export const  Airlines = () => {
 
-    const [airlines, setAirline] = useState([]);
-    const usersCollectionRefAirline = collection(db,'airlines')
+    const { airlines } = useContext(AirlineContext);
 
-
-    useEffect(() => {
-        const getAirlines = async() => {
-            const data = await getDocs(usersCollectionRefAirline);
-            setAirline(data.docs.map((doc) => ({...doc.data(), id:doc.id})));
-        };
-    
-        getAirlines();
-    }, []);
+   
+    console.log(airlines);
 
    
 
@@ -34,11 +26,10 @@ export const  Airlines = () => {
           
             <Header />
             <div className="content-wrap">
-         
+            {airlines.length !== 0 && <h1 style={{color:"white"}}>Airlines</h1>}
                 <div className="container text-center">
-                {airlines.map((airline) => {
-                    console.log(airline.AirlineName, airline.AirlineCountry);
-                    return(
+                {airlines.length === 0 && <div>slow internet...no products to display</div>}
+                    {airlines.map(airline => (
                     <div className="cards">
                  
                         <div className="kartica mx-auto">
@@ -46,11 +37,11 @@ export const  Airlines = () => {
                             
                                 <div class="card text-bg-primary mb-3 mt-3">
                                 
-                                    <div class="card-body"  style={{backgroundColor:"#a6a6a6 ",  }}>
+                                    <div class="card-body"  style={{backgroundColor:"#a6a6a6 "  }}>
                         
                                    <h1 class="velikiTekst">{airline.AirlineName}</h1>
                                
-                                   <iframe src={airline.AirlineLogo} width="100%" height="450" style={{border:0, padding:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                   <img src={airline.AirlineLogo} width="100%" height="300"   loading="lazy" referrerpolicy="no-referrer-when-downgrade"></img>
                                     <br/>
                                      <p class="AirlineInfo">{airline.AirlineInfo}</p>
                               
@@ -68,7 +59,7 @@ export const  Airlines = () => {
                         </div> 
                                         
                     </div>
-                )})}
+                ))}
                 </div>
        
             </div>

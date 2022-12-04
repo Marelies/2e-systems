@@ -1,83 +1,65 @@
-import {useEffect, useState} from 'react';
+import { useContext, useState, useEffect } from 'react'
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../../template-components/Footer.js';
 import "../../../App.css";
 import Header from '../../template-components/Header.js';
+import  firebase from 'firebase'
 import "../UserManagement.css";
-import {db, auth} from './../../../context/FireBaseProvider';
-import {getDocs,  collection } from "firebase/firestore"
+import { set, ref, onValue, remove, update } from "firebase/database";
+import {AirportContext} from '../../../context/AirportContext';
+import { db } from '../../../context/Config';
+import { useNavigate } from 'react-router-dom';
 
-
-
-  
 export const UserManagement = () => {
 
-    const [airports, setAirport] = useState([]);
-    const usersCollectionRef = collection(db,'airports')
+    const { airports } = useContext(AirportContext);
 
-    const [countrys, setCountry] = useState([]);
-    const countryCollectionCountry = collection(db,'countrys');
-
-    useEffect(() => {
-        const getAirports = async() => {
-            const data = await getDocs(usersCollectionRef);
-            setAirport(data.docs.map((doc) => ({...doc.data(), id:doc.id})));
-        };
+const navigate = useNavigate();
     
-        getAirports();
-    }, []);
+
+     
+ 
+    return (
+                        <>
+                        <Header/>
+                    {airports.length !== 0 && <h1 style={{color:"white"}}>Airports</h1>}
+                    <div class="col-sm-6" style={{margin:"0 auto"}}>
+                    {airports.length === 0 && <div>slow internet...no products to display</div>}
+                    {airports.map(airport => (
+                    <div class="card">
+                 
+
+                   
+                        <div class="image">
+                        <iframe src={airport.airportGPS} width="100%" height="250" style={{border:0, padding:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="card-inner">
+                        <div class="header">
+                            <h2>{airport.airportName}</h2>
+                            <h3>{airport.airportCountry}</h3>
+                            <h4>{airport.airportISO}</h4>
+                        </div>
+                        
+                        
+                        
+              
+                        </div>
+                    </div>
+                    ))}
+                    </div>
+                    <Footer/>
+                    </>
+
+
+
 
    
 
- 
-    return (
-
-        <div className="page-container">
-          
-            <Header />
-            <div className="content-wrap">
-         
-                <div className="container text-center">
-                {airports.map((airport) => {
-                    console.log(airport.Name, airport.GPS);
-                    return(
-                    <div className="cards">
-                 
-                        <div className="kartica mx-auto">
-                         
-                            
-                                <div class="card text-bg-primary mb-5 mt-5">
-                                
-                                    <div class="card-body">
-                        
-                                   <h1 class="velikiTekst">{airport.Name}</h1>
-                               
-                                   <iframe src={airport.GPS} width="100%" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                              
-                              
-                               </div>
-                                    <div class="card-footer">
-                                   
-                    <h1 class="velikiTekst"> {airport.CountryName}</h1>
-                    <h1 class="velikiTekst"> {airport.CountryISO}</h1>
-                                  
-                                    </div>
-                           
-                                </div>
-                    
-                            
-                        </div> 
-                                        
-                    </div>
-                )})}
-                </div>
-       
-            </div>
-            <Footer />
-    
-        </div>
 
     )
 }
 
 export default UserManagement;
+
+
