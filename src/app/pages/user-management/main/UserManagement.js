@@ -23,7 +23,7 @@ const navigate = useNavigate();
     return (
                         <>
                         <Header/>
-                    {airports.length !== 0 && <h1 style={{color:"white"}}>Airports</h1>}
+             
                     <div class="col-sm-6" style={{margin:"0 auto"}}>
                     {airports.length === 0 && <div>slow internet...no products to display</div>}
                     {airports.map(airport => (
